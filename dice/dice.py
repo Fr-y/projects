@@ -86,7 +86,7 @@ def generate_dices_horizontal():
         print("Please give an amount between 1 and 6")
 
 
-def __main__():
+def main():
     choice = int(input("Generate vertically : [0] \nGenerate horizontally : [1]\n"))
     if choice == 0:
         generate_dices_vertical()
@@ -97,7 +97,7 @@ def __main__():
 
 
 # ------------main------------
-__main__()
+main()
 # ----------------------------
 
 
