@@ -1,5 +1,4 @@
 from random import randint
-from turtle import width
 import pygame
 import math
 pygame.init()
