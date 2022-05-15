@@ -1,12 +1,6 @@
 def prim(szam):
-    osztok = 0
-    for i in range(1, szam+1):
-        if szam % i == 0:
-            osztok += 1
-    if osztok == 2:
-        return True
-    else:
-        return False
+    osztok = sum(szam % i == 0 for i in range(1, szam+1))
+    return osztok == 2
 
 def kiirprim():
     szam = int(input("Kérek egy pozitiv egész számot: "))

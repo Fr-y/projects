@@ -51,17 +51,14 @@ DICE_ART = {
 # takes in the roll amounts
 def roll_amount_input():
     dice = int(input("How many dice do you want to roll? [1-6] "))
-    if 0 < dice <= 6:
-        return dice
-    else:
-        return 0
+    return dice if 0 < dice <= 6 else 0
 
 # print out function
 def generate_dices_vertical():
     # for the roll amounts
     roll_amount = roll_amount_input()
     if roll_amount > 0:
-        for r in range(roll_amount):
+        for _ in range(roll_amount):
             # roll a random number
             rolled = (randint(1,6))
             # print out the dice by line
@@ -72,15 +69,11 @@ def generate_dices_vertical():
         
 
 def generate_dices_horizontal():
-    rolls = []
     roll_amount = roll_amount_input()
     if roll_amount > 0:
-        for r in range(roll_amount):
-            rolls.append(randint(1,6))
+        rolls = [randint(1,6) for _ in range(roll_amount)]
         for i in range(5):
-            dice_row = ''
-            for n in range(len(rolls)):
-                dice_row += (DICE_ART[rolls[n]][i])
+            dice_row = ''.join(DICE_ART[roll][i] for roll in rolls)
             print(dice_row)
     elif roll_amount == 0:
         print("Please give an amount between 1 and 6")

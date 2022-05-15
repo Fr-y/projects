@@ -7,14 +7,10 @@ def method1():
     print()
 
     # -- osszeg --
-    o = 0
+    o = sum(1 / (n*n) for n in range(1, iteration))
 
-    for n in range(1, iteration):
-        # -- tört --
-        t = 1 / (n*n)
-        o += t
     # -- pi --
-    pi = sqrt(o * 6) 
+    pi = sqrt(o * 6)
     print(pi)
 
 # Nilakantha's series 

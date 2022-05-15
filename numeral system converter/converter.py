@@ -48,7 +48,7 @@ def bin_to_hex(binary):
     groups = []
     # iterator
     n = 0
-    for i in range(len(binary)):
+    for _ in range(len(binary)):
         # if the group is not 4 bits
         if 0 < len(binary[n:n+4]) < 4:
             # add zeros to make it 4 bits
@@ -68,14 +68,11 @@ def bin_to_hex(binary):
     return hex
 
 def dec_to_hex(decimal):
-    values = [] 
-    hex = ''
+    values = []
     while decimal >= 1:
         values.append(str(decimal % 16)) 
         decimal //= 16
-    for value in values:
-        hex += hex_characters(int(value))
-
+    hex = ''.join(hex_characters(int(value)) for value in values)
     return hex[::-1]
 
 
@@ -84,13 +81,13 @@ def main():
     if choice == 0:
         dec_input = int(input("Enter a number in decimal: "))
         print(dec_to_bin(dec_input))
-    if choice == 1:
+    elif choice == 1:
         dec_input = int(input("Enter a number in decimal: "))
         print(dec_to_hex(dec_input))
-    if choice == 2:
+    elif choice == 2:
         bin_input = str(input("Enter a number in binary: "))
         print(bin_to_dec(bin_input))
-    if choice == 3:
+    elif choice == 3:
         bin_input = str(input("Enter a number in binary: "))
         print(bin_to_hex(bin_input))
         

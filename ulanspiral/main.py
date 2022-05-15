@@ -8,14 +8,8 @@ pygame.display.set_caption("ulan")
 FONT = pygame.font.SysFont("ariel", 100)
 
 def prim(num):
-    osztok = 0
-    for i in range(1, num+1):
-        if num % i == 0:
-            osztok += 1
-    if osztok == 2:
-        return True
-    else:
-        return False
+    osztok = sum(num % i == 0 for i in range(1, num+1))
+    return osztok == 2
 
 
 def draw(step, x, y, px, py):
