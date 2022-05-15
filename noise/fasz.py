@@ -11,8 +11,6 @@ def generate():
             r = random.randint(0,1)
             if r == 0:
                 pxarray[i][n] = (255, 255, 255)
-            if r == 1:
-                pass
     del pxarray
 
 

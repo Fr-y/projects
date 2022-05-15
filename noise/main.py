@@ -38,8 +38,6 @@ def generate_points():
             r = random.randint(0, (WIDTH * HEIGHT) / 1000)
             if r == 0:
                 pxarray[i][n] = (255, 255, 255, random.randint(0,255))
-            if r == 1:
-                pass
     print(255 - i/len(pxarray))
     del pxarray
 
